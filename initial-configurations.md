@@ -24,18 +24,18 @@ ns2.projeto.com
 
 ### Master Configuration
 
-1. Change the <mark style="color:red;">**IP**</mark> to the <mark style="color:red;">**IP**</mark> of your machine.
+1. Change the <mark style="color:red;">`your_ip_address`</mark> to your <mark style="color:red;">IP</mark>.
 
 ```bash
 sudo nano /etc/hosts
-192.168.117.131 ns1.projeto.com ns1
+your_ip_address ns1.projeto.com ns1
 ```
 
 ### Slave Configuration
 
-1. Change the <mark style="color:red;">**IP**</mark> to the <mark style="color:red;">**IP**</mark> of your machine.
+1. Change the <mark style="color:red;">`your_ip_address`</mark> to your <mark style="color:red;">IP</mark>
 
 ```bash
 nano /etc/hosts
-192.168.117.132 ns2.projeto.com ns2
+your_ip_address ns2.projeto.com ns2
 ```

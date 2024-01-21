@@ -12,7 +12,7 @@ sudo nano /etc/bind/named.conf.local
 zone "projeto.com" {
     type slave;
     file "/var/cache/bind/projeto.com.zone";
-    masters { 192.168.117.154; 131};
+    masters { your_ip_address; 131};
 };
 ```
 
@@ -22,7 +22,7 @@ zone "projeto.com" {
 
 ```bash
 nano /etc/resolv.conf
-nameserver 192.168.117.131
+nameserver your_ip_address
 ```
 
 ## Restart the BIND9 Service

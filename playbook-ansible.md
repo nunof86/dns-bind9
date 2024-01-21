@@ -34,7 +34,7 @@
     - name: Replace the /etc/hosts Configuration File
       become: yes
       copy:
-        content: '192.168.117.131 ns1.projeto.com ns1'
+        content: 'your_ip_address ns1.projeto.com ns1'
         dest: /etc/hosts
       diff: yes
       ignore_errors: yes
@@ -50,7 +50,7 @@
           zone "projeto.com" {
             type master;
             file "/etc/bind/zones/projeto.com.zone";
-            allow-transfer { 192.168.117.131; };
+            allow-transfer { your_ip_address; };
           };
         dest: /etc/bind/named.conf.local
 
@@ -72,14 +72,14 @@
                               )
           @       IN      NS      ns1.projeto.com.
           @       IN      NS      ns2.projeto.com.
-          ns1     IN      A       192.168.117.131
-          ns2     IN      A       192.168.117.132
+          ns1     IN      A       ns1_ip_address
+          ns2     IN      A       ns2_ip_address
         dest: /etc/bind/zones/projeto.com.zone
 
     - name: Replace the /etc/resolv.conf Configuration File
       become: yes
       copy:
-        content: 'nameserver 192.168.117.131'
+        content: 'nameserver your_ip_address'
         dest: /etc/resolv.conf
       diff: yes
       ignore_errors: yes
@@ -112,7 +112,7 @@
     - name: Replace the /etc/hosts Configuration File
       become: yes
       copy:
-        content: '192.168.117.132 ns1.projeto.com ns2'
+        content: 'your_ip_address ns1.projeto.com ns2'
         dest: /etc/hosts
       diff: yes
       ignore_errors: yes
@@ -128,7 +128,7 @@
           zone "projeto.com" {
               type slave;
               file "/var/cache/bind/projeto.com.zone";
-              masters { 192.168.117.154; 131};
+              masters { your_ip_address; 131};
           };
         dest: /etc/bind/named.conf.local
 

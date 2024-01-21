@@ -12,7 +12,7 @@ sudo nano /etc/bind/named.conf.local
 zone "projeto.com" {
     type master;
     file "/etc/bind/zones/projeto.com.zone";
-    allow-transfer { 192.168.117.131; };
+    allow-transfer { your_ip_address; };
 };
 ```
 
@@ -39,8 +39,8 @@ $TTL 86400
                     )
 @       IN      NS      ns1.projeto.com.
 @       IN      NS      ns2.projeto.com.
-ns1     IN      A       192.168.117.131
-ns2     IN      A       192.168.117.132
+ns1     IN      A       ns1_ip_address
+ns2     IN      A       ns2_ip_address
 ```
 
 ## Resolv.conf Configuration
@@ -49,7 +49,7 @@ ns2     IN      A       192.168.117.132
 
 ```bash
 nano /etc/resolv.conf
-nameserver 192.168.117.131
+nameserver your_ip_address
 ```
 
 ## Restart the BIND9 Service

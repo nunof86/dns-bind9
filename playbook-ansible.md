@@ -9,6 +9,8 @@
 3. Replace the <mark style="color:red;">`hosts:`</mark> option to <mark style="color:red;">**localhost**</mark> or other <mark style="color:red;">**host**</mark> of your choice.
 
 ```yaml
+---
+
 - name: DNS Master Configuration
   hosts: dns_master
 
@@ -97,6 +99,8 @@
 3. Replace the <mark style="color:red;">`hosts:`</mark> option to <mark style="color:red;">**localhost**</mark> or other <mark style="color:red;">**host**</mark> of your choice.
 
 ```yaml
+---
+
 - name: DNS Slave Configuration
   hosts: dns_slave
 
